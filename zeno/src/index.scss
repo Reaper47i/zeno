@@ -1,0 +1,46 @@
+//All the styles imports =>
+
+// 1. layouts
+@use './styles/layout/navbar';
+
+//2. pages
+@use './styles/pages/about';
+@use './styles/pages/cart';
+@use './styles/pages/home';
+@use './styles/pages/product';
+
+//3. utils
+
+@use './styles/utils/globals' as *;
+
+
+
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+
+.container{
+  width: 100vw;
+  height: $bodyh;
+  top:$navh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+

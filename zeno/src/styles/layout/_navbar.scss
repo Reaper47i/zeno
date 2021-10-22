@@ -1,0 +1,53 @@
+@use '../utils/globals' as *;
+
+.navbar{
+    width: $navw;
+    height: $navh;
+    background-color: $navBg;
+    color: $container;
+    font-family: $fontMon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left{
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 1.5rem;
+        .logo{
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.3rem;
+            font-size: 3.2rem;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: yellowgreen;
+            }
+
+        }
+        h1{
+            font-family: $fontMon;
+            font-weight: 500;
+            padding: 0 0.5rem;
+        }
+    }
+
+    .right{
+        padding: 0 2rem;
+        ul{
+            display: flex;
+            align-items: center;
+            list-style: none;
+            
+            li,a{
+                padding: 1rem;
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+}

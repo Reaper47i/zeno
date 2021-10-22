@@ -1,0 +1,57 @@
+@use '../utils/globals' as *;
+
+.home{
+    width: 100vw;
+    height: max-content;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    .carousel{
+        display: flex;
+        width: 95%;
+        margin: 1.5rem 0;
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-items: center;
+        justify-content: space-between;
+        transition: 0.2s all ease-in-out;
+
+        .mvleft,.mvright{
+            height: 100%;
+            width: 10%;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            color:$container;
+            background-color: rgba($color: #5c676d, $alpha: 0.3);
+        }
+        .title{
+            height: 100%;
+            width: 80%;
+            display: grid;
+            align-content: flex-end;
+            justify-items: center;
+            color: $container;
+            transition: 0.2s all ease-in-out;
+            p{
+                margin: 2rem 1rem;
+                font-size: 2rem;
+                font-family: $fontMon;
+                background-color:rgba($color: #5c676d, $alpha: 0.3);
+                padding: 1rem;
+                width: 19ch;
+                text-align: center;
+                backdrop-filter: blur(2px);
+                border-radius: 10px;
+                
+            }
+            
+        }
+        
+    }
+    
+}
