@@ -2,6 +2,7 @@
 
 // 1. layouts
 @use './styles/layout/navbar';
+@use './styles/layout/card';
 
 //2. pages
 @use './styles/pages/about';
@@ -13,17 +14,30 @@
 
 @use './styles/utils/globals' as *;
 
+html{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding:0;
+  border: none;
+}
+body{
+  overflow-x: hidden;
+}
+
+
 
 
 .App{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .container{
-  width: 100vw;
-  height: $bodyh;
-  top:$navh;
+  width: inherit;
+  height: 100%;
+  // top:$navh;
+  margin-top:$navh;
+  
 }
 
 

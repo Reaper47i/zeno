@@ -1,17 +1,19 @@
 @use '../utils/globals' as *;
 
 .home{
-    width: 100vw;
+    width: inherit;
     height: max-content;
-    background-color: lightcoral;
+    // background-color: lightcoral;
     display: flex;
     flex-direction: column;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
+    
 
     .carousel{
         display: flex;
-        width: 95%;
-        margin: 1.5rem 0;
+        width: 100%;
+        // margin: 1.5rem 0;
         height: 600px;
         background-position: center;
         background-repeat: no-repeat;
@@ -19,6 +21,9 @@
         align-items: center;
         justify-content: space-between;
         transition: 0.2s all ease-in-out;
+        @include breakpoint-up($full4k){
+            height: 900px;
+        }
 
         .mvleft,.mvright{
             height: 100%;
@@ -31,7 +36,7 @@
         }
         .title{
             height: 100%;
-            width: 80%;
+            width: 100%;
             display: grid;
             align-content: flex-end;
             justify-items: center;
@@ -43,10 +48,13 @@
                 font-family: $fontMon;
                 background-color:rgba($color: #5c676d, $alpha: 0.3);
                 padding: 1rem;
-                width: 19ch;
+                
                 text-align: center;
                 backdrop-filter: blur(2px);
                 border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 
             }
             
@@ -54,4 +62,348 @@
         
     }
     
+    .mobile_section{
+        width: 90%;
+        margin: 1.5rem;
+        height:max-content;
+        // background-color: $lightgray;
+        // box-shadow: $boxShadow;
+        display: grid;
+        grid-template-rows: 1fr;
+        place-items: center;
+        gap: 1rem;
+
+        .mobile-header{
+            width: 100%;
+            height: max-content;
+            font-size: 1.5rem;
+            color: $bodytxt;
+            font-family: $fontMon;
+            text-align: center;
+            border: 1px solid $lightgray;
+            border-radius: 8px;
+            box-shadow: $boxShadow;
+            padding: 1rem;
+            @include breakpoint-up($lg){
+                width: max-content;
+                font-size: 2rem;
+                padding: 1rem 3rem;
+            } 
+        }
+
+        .mobile-content{
+            width:100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            place-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            @include breakpoint-up($lg){
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas: "apple oneplus oneplus oneplus samsung"
+                                     "apple  microsoft microsoft microsoft samsung"
+                ;
+            }
+            >*{
+                width: 100%;
+                display: grid;
+                font-size: 3.5rem;
+                margin: 0.7rem;
+                gap: 1rem;
+                border: 1px solid $lightgray;
+                border-radius: 8px;
+                place-items: center;
+    
+                box-shadow: $boxShadow;
+                @include breakpoint-up($lg){
+                   &:nth-child(1){
+                       grid-area: apple;
+                       grid-template-rows: 1fr;
+                       place-items: center;
+                       height: 100%;
+                   }
+                   &:nth-child(2){
+                    grid-area: oneplus;
+                    grid-template-columns: 0.5fr 2fr;
+                    place-items: center;
+                    width: 100%;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                    }
+                   }
+                   &:nth-child(3){
+                    grid-area: microsoft;
+                    grid-template-columns: 0.6fr 2fr 2fr;
+                    place-items: center;
+                    gap: 0;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 3rem;
+                    img{
+                        width: 100%;
+                    }
+                   }
+                   &:nth-child(4){
+                    grid-area:samsung;
+                    grid-template-rows: 1fr;
+                    place-items: center;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 5rem;
+                   }
+                }
+                @include breakpoint-up($full4k){
+                    &:nth-child(1){
+                        font-size: 4.5rem;
+                    }
+                    &:nth-child(2){
+                        grid-template-columns: 1fr 2fr;
+                        font-size: 4.5rem;
+                    }
+                    &:nth-child(3){
+                        font-size: 4.5rem;
+                        grid-template-columns: 0.5fr 1fr 1.5fr;
+                    }
+                    &:nth-last-child(1){
+                        font-size: 6.5rem;
+                    }
+                    
+                }
+
+                img{
+                    width: min(200px);
+                    height: min(230px);
+                    @include breakpoint-up($full4k){
+                        width: 300px;
+                        height: 400px;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+
+    .h-aparels{
+        width: 90%;
+        height: max-content;
+        margin:1.5rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        place-items: center;
+        gap: 1rem;
+
+        .aparel-header{
+            width: 100%;
+            height: max-content;
+            font-size: 1.5rem;
+            color: $bodytxt;
+            font-family: $fontMon;
+            text-align: center;
+            border: 1px solid $lightgray;
+            border-radius: 8px;
+            box-shadow: $boxShadow;
+            padding: 1rem;
+            @include breakpoint-up($lg){
+                width: max-content;
+                font-size: 2rem;
+                padding: 1rem 3rem;
+            } 
+        }
+
+        .aparel-content{
+            width: 100%;
+            height: max-content;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.3rem;
+            @include breakpoint-up($lg){
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: 1fr;
+            }
+            >*{
+                width: 100%;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @include breakpoint-up($lg){
+                    &:nth-child(1){
+                        grid-column: span 2 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }   
+                    &:nth-child(2){
+                        grid-column: span 4 / auto;
+                    }
+                    &:nth-child(3){
+                        grid-column: span 3 / auto;
+                    }
+                    &:nth-child(4){
+                        grid-column: span 1 / auto;
+                        grid-row: span 2 /auto;
+                        height: 100%;
+                    }
+                    &:nth-child(5){
+                        grid-column: span 5 / auto;
+                    }
+                    &:nth-child(6){
+                        grid-column: span 2 /auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(7){
+                        grid-column: span 2 /auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(8){
+                        grid-column: span 2 /auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(9){
+                        grid-column: span 4 / auto;
+                    }
+                    &:nth-child(10){
+                        grid-column: span 2 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(11){
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(12){
+                        grid-column: span 3 / auto;
+                    }
+                    &:nth-child(13){
+                        grid-column: span 3 /auto;
+                        
+                    }
+                    &:nth-child(14){
+                        grid-column: span 2 / auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(15){
+                        grid-column: span 2 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(16){
+                        grid-column: span 2 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(17){
+                        grid-column: span 2 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(18){
+                        grid-column: span 4 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                        
+                    }
+                    
+                }
+                @include breakpoint-up($full4k){
+                    height: 700px;
+                    &:nth-child(1){
+                        grid-row: span 4 / auto;
+                    }
+                       
+                    &:nth-child(2){
+                        height: 100%;
+                        grid-row: span 2 / auto;
+                    }
+                    &:nth-child(3){
+                        grid-row: span 2 /auto;
+                        height: 100%;
+                    }
+                    &:nth-child(4){
+                        grid-row: span 4 /auto;
+                        height: 100%;
+                    }
+                    &:nth-child(5){
+                        grid-column: span 5 / auto;
+                        grid-row: span 2/auto;
+                        height: 100%;
+                    }
+                    &:nth-child(6){
+                        grid-column: span 2 /auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(7){
+                        grid-column: span 2 /auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(8){
+                        grid-column: span 2 /auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(9){
+                        grid-column: span 4 / auto;
+                        grid-row: span 2/auto;
+                        height: 100%;
+                    }
+                    &:nth-child(10){
+                        grid-column: span 2 / auto;
+                        grid-row: span 4 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(11){
+                        grid-row: span 4 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(12){
+                        grid-column: span 3 / auto;
+                        grid-row: span 2 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(13){
+                        grid-column: span 3 /auto;
+                        grid-row: span 2 / auto;
+                        
+                    }
+                    &:nth-child(14){
+                        grid-column: span 2 / auto;
+                        grid-row: span 5 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(15){
+                        grid-column: span 2 / auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(16){
+                        grid-column: span 2 / auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(17){
+                        grid-column: span 2 / auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                    }
+                    &:nth-child(18){
+                        grid-column: span 4 / auto;
+                        grid-row: span 3 / auto;
+                        height: 100%;
+                        
+                    }
+                }
+            }
+        }
+    }
 }

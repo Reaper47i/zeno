@@ -1,3 +1,495 @@
+@use '../utils/globals' as *;
+
 .product{
-    background-color: red;
+    width: 100%;
+    height: max-content;
+    background-color: $container;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    // @include breakpoint-down($xs){
+    //     grid-template-columns: repeat(4,1fr);
+        
+    // }
+    
+    
+    
+    .product-nav{
+        background-color:$lightgray;
+        padding: 1rem;
+        @include breakpoint-down($md){
+            padding: 0.2rem;
+        }
+        height: 100%;
+        grid-column:   1 / 2;
+        position: fixed;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        left: 0;
+          
+        ul{
+            position: static;
+            list-style: none;
+            // margin: 0.3rem;
+            // padding: 0.5rem;
+            // width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-items: center;
+            padding:1rem 0;
+
+            li{
+                
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-items: center;
+                // margin-bottom: 0.5rem;
+                padding: 0.5rem 0 0.6rem 0;
+                font-size: 1rem;
+                font-family: $fontMon;
+                color: $navBg;
+                font-weight: 400;
+                text-align: center;
+                
+                @include breakpoint-up($lg){
+                    font-size: 1.2rem;
+                }
+                
+                &:hover{
+                    color: $bodytxt;
+                    cursor: pointer;                    
+                }  
+            }
+        }
+    }
+    .nav-sm-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 0.2rem;
+        font-size: 1.7rem;
+        @include breakpoint-up($md){
+            font-size: 2rem;
+        }
+        
+    }
+    .nav-menu{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-top: 0rem;
+       
+        .ul_menu{
+            width: 100%;
+            background-color: $navBg;
+            margin: 0;
+            padding: 0;
+            // border-radius: 8px;
+            
+            
+            .li_menu{
+                padding: 0.35rem;
+                font-size: 1rem;
+                color: $container;
+                @include breakpoint-down($lg){
+                    font-size: 1.3rem;
+                }
+                & a{
+                    text-decoration: none;
+                    color: $container;
+                    &:hover{
+                        color:yellowgreen;
+                        cursor: pointer;                    
+                    }
+                }
+                
+            }
+            .li_menu_samsung{
+                @include breakpoint-down($lg){
+                    padding: 0.3rem;
+                    font-size: 2.5rem;
+                    & a{
+                        height: 2.5rem;
+                        text-decoration: none;
+                        color: $container;
+                        &:hover{
+                            color:yellowgreen;
+                            cursor: pointer;                    
+                        }
+                    }
+                }
+                padding: 0.35rem;
+                font-size: 1rem;
+                color: $container;
+                & a{
+                    text-decoration: none;
+                    color: $container;
+                    &:hover{
+                        color:yellowgreen;
+                        cursor: pointer;                    
+                    }
+                }
+
+            
+            }
+            .li_menu_cloth{
+                padding: 0.35rem;
+                font-size: 1rem;
+                color: $container;
+                @include breakpoint-down($lg){
+                    font-size: 0.7rem;
+                }
+                & a{
+                    text-decoration: none;
+                    color: $container;
+                    &:hover{
+                        color:yellowgreen;
+                        cursor: pointer;                    
+                    }
+                }
+            }
+        }
+        .ul_menu-father{
+            width: 90%;
+            // background-color: $navBg;
+            border: 2px solid $navBg;
+            margin: 0;
+            padding: 0;
+            border-radius: 12px;
+        }
+        .li_menu-M{
+            padding: 0.35rem;
+            font-size: 1rem;
+            color: $bodytxt;
+        }
+        .li_menu-W{
+            margin-top: 0.5rem;
+            padding: 0.35rem;
+            font-size: 1rem;
+            color: $bodytxt;
+        }
+    }
+    .product-container{
+        grid-column: 2 / -1;
+        width: 100%;
+        right: 0;
+        height: max-content;
+        display: grid;
+        grid-template-rows: 1fr;
+        place-items: center;
+        background-color: $container;
+        gap: 1rem;
+
+        >*{
+            // top: 70px;
+            scroll-margin: $navh; // so that the page scrolls at position
+        }
+        .apple{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            
+            
+    
+            .apple-header{
+                display: grid;
+                grid-template-columns: 0.6fr 0.5fr;
+                // margin: 0.2rem;
+                padding: 0.2rem;
+                place-items: center;
+                text-align: center;
+                font-size: 2.5rem;
+                h1{
+                    font-size: 2.5rem;
+                    font-family: $fontMon;
+                    font-weight: 300;
+                    padding: 0 0.3rem 0.3rem 0.3rem;
+                }
+                
+            }
+            .apple-content{
+                width: 100%;
+                height: max-content;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr;
+                gap: 1rem;
+                background-color: inherit;
+            }
+    
+        }
+    
+        .samsung{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            
+    
+            .samsung-header{
+                width: 100%;
+                display: grid;
+                padding: 0.2rem;
+                place-items: center;
+                text-align: center;
+                font-size: 6rem;
+                
+            }
+            .samsung-content{
+                width: 100%;
+                height: max-content;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr;
+                gap: 1rem;
+                background-color: inherit;
+            }
+    
+        }
+    
+        .oneplus{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            
+    
+            .oneplus-header{
+                display: grid;
+                grid-template-columns: 0.6fr 0.5fr;
+                // margin: 0.2rem;
+                padding: 0.2rem;
+                place-items: center;
+                text-align: center;
+                font-size: 2.5rem;
+                h1{
+                    font-size: 2.5rem;
+                    font-family: $fontMon;
+                    font-weight: 300;
+                    padding: 0 0.3rem 0.3rem 0.3rem;
+                }
+                
+            }
+            .oneplus-content{
+                width: 100%;
+                height: max-content;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr;
+                gap: 1rem;
+                background-color: inherit;
+            }
+        }
+    
+        .motorola{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            
+    
+            .motorola-header{
+                display: grid;
+                grid-template-columns: 0.6fr 0.5fr;
+                // margin: 0.2rem;
+                padding: 0.2rem;
+                place-items: center;
+                text-align: center;
+                font-size: 2.5rem;
+                h1{
+                    font-size: 2.5rem;
+                    font-family: $fontMon;
+                    font-weight: 300;
+                    padding: 0 0.3rem 0.3rem 0.3rem;
+                }
+                
+            }
+            .motorola-content{
+                width: 100%;
+                height: max-content;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr;
+                gap: 1rem;
+                background-color: inherit;
+            }
+        }
+    
+        .microsoft{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            
+    
+            .microsoft-header{
+                display: grid;
+                grid-template-columns: 0.6fr 0.5fr;
+                // margin: 0.2rem;
+                padding: 0.2rem;
+                place-items: center;
+                text-align: center;
+                font-size: 2.5rem;
+                h1{
+                    font-size: 2.5rem;
+                    font-family: $fontMon;
+                    font-weight: 300;
+                    padding: 0 0.3rem 0.3rem 0.3rem;
+                }
+                
+            }
+            .microsoft-content{
+                width: 100%;
+                height: max-content;
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr;
+                gap: 1rem;
+                background-color: inherit;
+            }
+        }
+    }
+
+    // different products =>
+
+    
+
+    .clothes-men{
+        width: 100%;
+        height: max-content;
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        >*{
+            scroll-margin: calc($navh + 5px);
+            // scroll-margin: $navh;
+        }
+        
+        .peter-eng-men{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            
+
+        }
+        .allenSolly-men{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .HandM-men{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            
+        }
+        .adidas-men{
+            width: 90%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+    }
+    .clothes-women{
+        width: 90%;
+        height: max-content;
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        >*{
+            scroll-margin: calc($navh + 5px);
+            // scroll-margin: $navh;
+            
+            
+        }
+        
+        .nike-women{
+            width: 100%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            
+        }
+
+        .handm-women{
+            width: 100%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .nykaa-women{
+            width: 100%;
+            height: max-content;
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .clothes-header{
+        width: 100%;
+        display: grid;
+        place-items: center;
+        img{
+            object-fit: contain;
+            width: 100%;
+            height: 150px;
+        }
+    }
+    .clothes-content{
+        width: 100%;
+        height: max-content;
+        display: grid;
+        place-items: center;
+        // align-items: center;
+        // justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        
+        
+    }
 }

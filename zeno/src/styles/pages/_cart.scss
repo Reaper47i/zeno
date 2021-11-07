@@ -1,3 +1,78 @@
+@use '../utils/globals'as *;
+
 .cart{
-    background-color: yellowgreen;
+    width: 100%;
+    height: max-content;
+    // background-color: yellowgreen;
+    text-align: center;
+    padding: 1rem;
+
+    .cart_content{
+        width: 100%;
+        margin: 0.5rem;
+        height: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        .cart_items{
+            width: 90%;
+            height: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            table{
+                table-layout: auto;
+                width: 100%;
+                text-align: center;
+                border: 1px solid #ddd;
+                
+                box-shadow: $boxShadow;
+                font-family: $fontMon;
+                
+                border-collapse: collapse;
+                
+                tbody{
+                    tr:nth-child(even){
+                        background-color: #f2f2f2;
+                    }
+                    tr:hover{
+                        background-color: #ddd;
+                    }
+                }
+                    
+                td{
+                    border: 1px solid #ddd;
+                    font-size: 1.2rem;
+                    padding: 0.2rem 0;
+                }
+                th{
+                    border: 1px solid #ddd;
+                    font-size: 2rem;
+                    padding: 0.5rem 0;
+                    
+                    background-color: $navBg;
+                }
+                .ckout-btn{
+                    width: 7rem;
+                    border: none;
+                    font-size: 1.3rem;
+                    color:whitesmoke;
+                    background-color: $bodytxt;
+                    cursor: pointer;
+                    :hover{
+                        cursor: pointer;
+                        background-color: white;
+                        color: $bodytxt;
+                    }
+                }
+            }
+            
+        }
+
+    }
+
+    
 }
