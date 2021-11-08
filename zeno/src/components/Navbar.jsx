@@ -3,9 +3,12 @@ import {GiStripedSun} from 'react-icons/gi'
 import {FaBars} from 'react-icons/fa'
 import {MdClose} from 'react-icons/md'
 import { Link } from 'react-router-dom'
-const Navbar = () => {
+
+const Navbar = ({modal, setModal}) => {
     const[mobile, setMobile] = useState(false);
     const[nav, setNav] = useState(false);
+
+
 
     useEffect(()=>{
         if(window.innerWidth < 768){
@@ -29,6 +32,7 @@ const Navbar = () => {
     },[]);
 
     return (
+        <>
             <div className="navbar">
                 <div className="main_bar">
                     <div className="left">
@@ -42,7 +46,7 @@ const Navbar = () => {
                                 <Link to="/product">Products</Link>
                                 <Link to="/cart">Cart</Link>
                                 <Link to="about">About</Link>
-                                <li>Login</li>
+                                <li onClick={()=>setModal(!modal)}>Login</li>
                             </ul>
                         </div>)     
                     }
@@ -62,19 +66,17 @@ const Navbar = () => {
                 
                 { mobile && nav && (
                     <div className='navbox'>
-                    <ul className="ul-nav" >
-                        <Link to="/product" onClick={()=> setNav(!nav)}>Products</Link>
-                        <Link to="/cart" onClick={()=> setNav(!nav)}>Cart</Link>
-                        <Link to="about" onClick={()=> setNav(!nav)}>About</Link>
-                        <li>Login</li>
-                    </ul>
-                </div>
+                        <ul className="ul-nav" >
+                            <Link to="/product" onClick={()=> setNav(!nav)}>Products</Link>
+                            <Link to="/cart" onClick={()=> setNav(!nav)}>Cart</Link>
+                            <Link to="about" onClick={()=> setNav(!nav)}>About</Link>
+                            <li onClick={()=>setModal(!modal)}>Login</li>
+                        </ul>
+                    </div>
                 )
                 }
-                
-                
             </div>
-            
+        </>    
        
     )
 }

@@ -3,6 +3,7 @@
 // 1. layouts
 @use './styles/layout/navbar';
 @use './styles/layout/card';
+@use './styles/layout/modal';
 
 //2. pages
 @use './styles/pages/about';
@@ -37,6 +38,7 @@ body{
   height: 100%;
   // top:$navh;
   margin-top:$navh;
+  z-index: 1;
   
 }
 

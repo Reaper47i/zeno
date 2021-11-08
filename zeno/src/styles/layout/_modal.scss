@@ -1,0 +1,124 @@
+@use '../utils/globals' as *;
+
+.modal{
+    // top: $navh;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+
+    .modal-content{
+        // position: absolute;
+        width: 85%;
+        height: max-content;
+        border-radius: 8px;
+        background-color:rgba($color: #ddd, $alpha: 0.8);
+        display: flex;
+        flex-direction: column;
+        @include breakpoint-up($md){
+            width: 50%;
+        }
+        
+
+        .modal-top{
+            width: 100%;
+            height: 10%;
+            // background-color: $navBg;
+            display: flex;
+            align-items: center;
+            padding: 0.3rem 0;
+
+            h2{
+                flex: 2;
+                font-family: $itallicB;
+                text-align: center;
+                font-size: 2rem;
+            }
+            .mdl-close{
+                flex: 0.1;
+                margin-right: 0.5rem;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: $bodytxt;
+            }
+        }
+        .modal-body{
+            margin:0.5rem;
+            padding: 0.5rem;
+            width: 80%;
+            height: max-content;
+            // background-color: rgba($color: #f2f2f2, $alpha: 0.35);
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            font-family: $fontMon;
+            // align-items: center;
+
+            h3{
+                font-family: $fontMon;
+                text-align: start;
+                padding: 0.5rem;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+            input{
+                height: 20px;
+                background-color: transparent;
+                 box-shadow: 0 5px 3px -3px rgb(18, 13, 97);
+                border-color: transparent;
+                padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                outline: none;
+                
+            }
+            .input-btn{
+                margin: 1rem 0;
+                font-weight: 600;
+                font-size: 1.5rem;
+                background-color: $navBg;
+                color: #f2f2f2;
+                letter-spacing: 1.5px;
+                // width: 50%;
+                height: 40px;
+                border: 1px solid transparent;
+                border-radius: 25px;
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(18, 13, 97);
+                    color: $bodytxt;
+                    // outline: 3px solid $navBg;
+                    transition: 0.4s all ease-out;
+                }
+            }
+            a{
+                align-self: center;
+                margin-top: 20px;
+                text-decoration: none;
+                color: #f2f2f2;
+                &:hover{
+                    color: $bodytxt;
+                    
+                }
+            }
+        }
+        .modal-footer{
+            width: 100%;
+            height: 5.5px;
+            background-color: $navBg;
+            
+            // border: 1px solid transparent;
+            
+
+        }
+    }
+}
+

@@ -9,7 +9,7 @@
         // display: flex;
         top: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         
     
     .main_bar{
@@ -76,9 +76,16 @@
                     font-size: 1.2rem;
                     text-decoration: none;
                     color: inherit;
+
                     @include breakpoint-up($full4k){
                         font-size: 2.5rem;
                     }
+
+                    &:hover{
+                        cursor: pointer;
+                        color: yellowgreen;
+                    }
+                    
                 }
             }
     
@@ -117,4 +124,5 @@
         }
        
     }
-    
+
+   

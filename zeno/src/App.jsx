@@ -4,16 +4,20 @@ import Home from "./components/pages/Home"
 import Products from "./components/pages/Products"
 import Cart from "./components/pages/Cart"
 import About from "./components/pages/About"
+import { useState } from "react"
+import Modal from "./components/layout/Modal"
 
 
 
 function App() {
+  const[modal, setModal] = useState(false);
   
 
   return (
     <Router>
       <div className="App">
-        <Navbar/>
+        <Navbar modal={modal} setModal={setModal}/>
+        {modal && (<Modal modal={modal} setModal={setModal} />)}
         <div className="container">
           <Switch>
             <Route exact path="/" component={Home} />
